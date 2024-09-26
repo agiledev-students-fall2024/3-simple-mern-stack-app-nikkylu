@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function AboutUs() {
-    const [data, setData] = useState({ paragraphs: [], image: "" }); 
+    const [data, setData] = useState({ name:"", paragraphs: [], image: "" }); 
 
     useEffect(() => {
         axios.get('http://localhost:5002/aboutus')
             .then(response => {
-                const { paragraphs, image } = response.data;
 
-                setData({ paragraphs, image });
+                const { name,paragraphs, image } = response.data;
+                setData({ name,paragraphs,image });
+
             })
             .catch(error => console.error('Error fetching data about us:', error));
     }, []); 
 
     return (
         <div>
-            <h1>About Nikky</h1>
+            <h1>About {data.name}</h1>
             {data.paragraphs.map((paragraph, i) => (
                 <p key={i} style={{ fontSize: '20px', margin:'30px' }}>{paragraph}</p>
             ))}

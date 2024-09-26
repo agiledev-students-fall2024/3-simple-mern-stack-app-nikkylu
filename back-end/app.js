@@ -25,6 +25,7 @@ const { User } = require('./models/User')
 // a route to handle fetching text and url for about us
 app.get('/aboutus', async (req, res) => {
         res.json({
+          name:"Nikky",
           paragraphs:[
             "Hey, this is Nikky. I am a senior double majoring in computer science and philosophy.\
              At the same time, I am also a researcher working on human machine comparison.",
