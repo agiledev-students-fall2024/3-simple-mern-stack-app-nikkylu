@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import AboutUs from './AboutUs'
 import Messages from './Messages'
 import MessageStandalone from './MessageStandalone'
 import Home from './Home'
@@ -15,6 +16,9 @@ const App = props => {
           <Routes>
             {/* a route for the home page */}
             <Route path="/" element={<Home />} />
+
+            {/* a route for the AboutUs page */}
+            <Route path="/aboutus" element={<AboutUs />} />
 
             {/* a route to see a list of all messages */}
             <Route path="/messages" element={<Messages />} />

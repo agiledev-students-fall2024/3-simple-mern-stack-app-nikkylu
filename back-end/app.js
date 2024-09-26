@@ -22,6 +22,23 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+// a route to handle fetching text and url for about us
+app.get('/aboutus', async (req, res) => {
+        res.json({
+          paragraphs:[
+            "Hey, this is Nikky. I am a senior double majoring in computer science and philosophy.\
+             At the same time, I am also a researcher working on human machine comparison.",
+
+             "In my free time, I travel to different places and enjoy the outdoors. \
+             I have raced for nyu cycling team and now I am a recreational climber, swimmer, and hiker. \
+             I am also a fan of the arts, including photography, film, contemporary and modern objects.",
+
+             "Another obsession I have is about coffee. I like being a barista and I make my own coffee everyday!"
+          ],
+          image:"/nikky.png"
+          })
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
